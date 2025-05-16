@@ -59,10 +59,10 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ secrets.DOCKERHUB_USERNAME }}/имя_твоего_репозитория_в_dockerhub 
+          images: ${{ secrets.DOCKERHUB_USERNAME }} 
           tags: |
-            type=ref,event=tag # Использовать Git тег как Docker тег (например, v1.0.0 -> v1.0.0)
-            type=sha # Также добавить тег с коротким хешем коммита (например, sha-abcdef)
+            type=ref,event=tag 
+            type=sha 
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
