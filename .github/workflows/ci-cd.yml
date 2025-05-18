@@ -59,10 +59,10 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ secrets.DOCKERHUB_USERNAME }} 
+          images: ${{ secrets.DOCKERHUB_USERNAME }}/parcel-tracker
           tags: |
             type=ref,event=tag 
-            type=sha 
+            type=sha
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
