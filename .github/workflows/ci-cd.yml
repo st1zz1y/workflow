@@ -3,10 +3,12 @@ name: CI/CD Workflow
 on:
   push:
     branches:
-      - main 
+      - main
+    tags:         
+      - 'v0.1.8'      
   pull_request:
     branches:
-      - main 
+      - main
 
 jobs:
   test:
@@ -73,3 +75,4 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }} 
           labels: ${{ steps.meta.outputs.labels }} 
           platforms: linux/amd64 
+    
